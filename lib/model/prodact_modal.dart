@@ -12,5 +12,15 @@ class ProdactModal {
       required this.price,
       required this.descraption,
       required this.image , 
-      });
+      }); 
+
+      factory ProdactModal.fromJason(jasonDa){
+        return ProdactModal(
+          id: jasonDa['id'], 
+          title: jasonDa['title'], 
+          price:jasonDa['price'], 
+          descraption: jasonDa[ "description"], 
+          image: jasonDa['image'] ,
+          );
+      }
 }
