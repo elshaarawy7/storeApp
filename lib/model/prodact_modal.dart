@@ -4,23 +4,26 @@ class ProdactModal {
   final double price;
   final String descraption;
   final String image;
+  final RatingModal rating  ;
 
-  ProdactModal(
+  ProdactModal( 
       {
       required this.id,
       required this.title,
       required this.price,
       required this.descraption,
       required this.image , 
+      required this.rating,
       }); 
 
-      factory ProdactModal.fromJason(jasonDa){
+      factory ProdactModal.fromJason(jasonData){
         return ProdactModal(
-          id: jasonDa['id'], 
-          title: jasonDa['title'], 
-          price:jasonDa['price'], 
-          descraption: jasonDa[ "description"], 
-          image: jasonDa['image'] ,
+          id: jasonData['id'], 
+          title: jasonData['title'], 
+          price:jasonData['price'], 
+          descraption: jasonData[ "description"], 
+          image: jasonData['image'] ,
+          rating: RatingModal.fromJason(jasonData['rating'])
           );
       }
 } 
@@ -30,4 +33,11 @@ class RatingModal{
   final int count ;
 
 
-  RatingModal({required this.rete, required this.count});}
+  RatingModal({required this.rete, required this.count});
+  factory RatingModal.fromJason (jasonData){
+    return RatingModal(
+      rete:jasonData['rate'] , 
+      count: jasonData['count'],
+      );
+  }
+  }
