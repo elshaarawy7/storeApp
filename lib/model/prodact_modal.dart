@@ -23,4 +23,11 @@ class ProdactModal {
           image: jasonDa['image'] ,
           );
       }
-}
+} 
+
+class RatingModal{
+  final double rete ;
+  final int count ;
+
+
+  RatingModal({required this.rete, required this.count});}
