@@ -1,18 +1,17 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-class AllCatogry { 
+import 'package:stroe_app/helper/api.dart';
+import 'package:stroe_app/model/prodact_modal.dart';
+class AllCatogryServices { 
 
   Future<List<dynamic>> getAllCatogry()async{
-    http.Response response = await http.get(Uri.parse("https://fakestoreapi.com/products/categories"));
-    if (response.statusCode==200) {
-  List<dynamic> data = jsonDecode(response.body);
+    List<dynamic>data = await Api().get(url: "https://fakestoreapi.com/products/categories");
   return data;
 } 
 
-else {
-  throw Exception('ther is propleam in the statusCode${response.statusCode}');
-}
-  }
 
-}
+
+} 
+
+// https://fakestoreapi.com/products/categories
