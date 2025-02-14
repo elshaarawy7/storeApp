@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:stroe_app/model/prodact_modal.dart';
 
 class CustemCard extends StatelessWidget {
-  const CustemCard({super.key});
+   CustemCard({super.key, required this.prodact});
+
+  ProdactModal prodact ;
 
   @override
   Widget build(BuildContext context) {
