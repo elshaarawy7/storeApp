@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
+
 void main() {
   runApp(const MyApp());
 }
@@ -117,20 +117,23 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: ()async{
-        http.Response response = await http.post(
-      Uri.parse('https://fakestoreapi.com/products'),
-      headers: {"Content-Type": "application/json"}, // إضافة الهيدر
-      body: json.encode({ // استخدام json.encode() بدلاً من jsonEncode()
-        "title": "test product",
-        "price": 13.5,
-        "description": "lorem ipsum set",
-        "image": "https://i.pravatar.cc",
-        "category": "electronic"
-      }),
-        );
-        }, 
-
+        onPressed: () async {
+          http.Response response = await http
+              .post(Uri.parse('https://fakestoreapi.com/products'), body: {
+            " title": " test ",
+            "price": "13.5",
+            "description": "lorem ipsum set",
+            "image": " https://i.pravatar.cc",
+            "category": "electronic",
+          } ,
+            headers: {
+              'Accept' : 'application/json',
+              'Content-Type' : 'application/x-www-form-urlencoded',
+              'Authorization' : "Bearer"
+            }
+          );
+          print(response.body);
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
