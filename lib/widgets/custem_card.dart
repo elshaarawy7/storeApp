@@ -19,7 +19,7 @@ class CustemCard extends StatelessWidget {
                   ) ,
                 ]
               ), 
-              child:  Card(
+              child: const  Card(
                  color: Colors.white,
                 elevation: 10,
                 child: Padding(
@@ -58,8 +58,8 @@ class CustemCard extends StatelessWidget {
               ),
             ),
            Positioned(
-            left: 120,
-            bottom: 50,
+            left: 100,
+            top: 5,
             child: Image.asset("lib/pages/a9344904-4ccb-43a6-b23b-7e8d2a7e637d.jpg" , height: 75,),
            )
           ],

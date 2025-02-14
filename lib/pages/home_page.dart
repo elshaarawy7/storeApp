@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        
           actions: [
           IconButton(
               onPressed: () {},
@@ -29,7 +30,22 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
       ), 
-      body: CustemCard(),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 16 , right: 16 , top: 65 , bottom: 16 ),
+        child: GridView.builder(
+          clipBehavior: Clip.none,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2 ,
+            childAspectRatio: 1.5 ,
+            crossAxisSpacing: 10 ,
+            mainAxisSpacing: 10 ,
+            ), 
+            itemBuilder: (context, index) {
+              return CustemCard();
+            },
+          
+          ),
+      ),
     );
   }
 }
