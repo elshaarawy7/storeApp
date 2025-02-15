@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Custem_Text_field extends StatelessWidget {
-   Custem_Text_field({super.key,  this.hintText , this.onChanged});
+   Custem_Text_field({super.key,  this.hintText , this.onChanged , this.inputType});
 
   final hintText ; 
   Function(String)?onChanged;

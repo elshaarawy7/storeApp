@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stroe_app/services/update_prodact.dart';
 import 'package:stroe_app/widgets/CustemBatton.dart';
 import 'package:stroe_app/widgets/custem_text_field.dart';
 
@@ -6,7 +7,7 @@ class UppdateProdactPage extends StatelessWidget {
    UppdateProdactPage({super.key});
 
   String ? prodactName , descraption , image ;
-  int ? price ;
+  String ? price ;
   static String id = 'update prodact' ;
 
   @override
@@ -25,51 +26,64 @@ class UppdateProdactPage extends StatelessWidget {
       ), 
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Custem_Text_field(
-              onChanged: (data) {
-                prodactName = data ;
-              },
-              hintText: "Prodact Name",
-            ) , 
+        child: SingleChildScrollView(
+          child: Column(
+            children: [ 
 
-          const  SizedBox(height: 10,),
-
-            Custem_Text_field(
-              onChanged: (data) {
-                descraption = data ;
-              },
-              hintText: "descraption",
-            ) ,
-
+              SizedBox(height: 100,),
+              Custem_Text_field(
+                onChanged: (data) {
+                  prodactName = data ;
+                },
+                hintText: "Prodact Name",
+              ) , 
+          
             const  SizedBox(height: 10,),
-
-            Custem_Text_field(
-              onChanged: (data) {
-                price = int.parse(data);
+          
+              Custem_Text_field(
+                onChanged: (data) {
+                  descraption = data ;
+                },
+                hintText: "descraption",
+              ) ,
+          
+              const  SizedBox(height: 10,),
+          
+              Custem_Text_field(
+                onChanged: (data) {
+                  price = data;
+                },
+                inputType: TextInputType.number,
+                hintText: "price",
+              ) , 
+          
+              const  SizedBox(height: 10,),
+          
+              Custem_Text_field(
+                onChanged: (data) {
+                  image = data ;
+                },
+                hintText: "image",
+              ) , 
+          
+            const  SizedBox(height: 50,) , 
+          
+            CusemMyBatton(
+              text: 'Update',
+              onPressed: () {
+                UpdateProdactServces().uppdateProdct(
+                  title: prodactName!, 
+                  price: price!, 
+                  desc: descraption!, 
+                  image: image!, 
+                  category: category!
+                   );
               },
-              hintText: "price",
-            ) , 
-
-            const  SizedBox(height: 10,),
-
-            Custem_Text_field(
-              hintText: "image",
-            ) , 
-
-          const  SizedBox(height: 50,) , 
-
-          CusemMyBatton(
-            text: 'Update',
-            onPressed: () {
-              
-            },
-            )
-
-           
-          ],
+              )
+          
+             
+            ],
+          ),
         ),
       ),
     );
