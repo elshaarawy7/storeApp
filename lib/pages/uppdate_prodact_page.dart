@@ -17,7 +17,7 @@ class UppdateProdactPage extends StatefulWidget {
 class _UppdateProdactPageState extends State<UppdateProdactPage> {
   String? prodactName, descraption, image;
 
-  String? price;
+  String ? price;
   bool isLoding = false;
   @override
   Widget build(BuildContext context) {
@@ -113,12 +113,11 @@ class _UppdateProdactPageState extends State<UppdateProdactPage> {
 
   void upDateProdact(ProdactModal product) {
     UpdateProdactServces().uppdateProdct(
-      title: prodactName!,
-      price: price!,
-      desc: descraption!,
-      image: image!,
+      title: prodactName == null ? product.title :prodactName!,
+      price: price == null ? product.price.toString() : price!,
+      desc: descraption == null ? product.description:descraption!,
+      image: image == null ? product.image:image!,
       category: product.category,
     );
-    isLoding = false;
   }
 }
