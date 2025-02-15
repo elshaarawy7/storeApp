@@ -12,22 +12,9 @@ class Custem_Text_field extends StatelessWidget {
 
 
   Widget build(BuildContext context) {
-    return TextFormField(  
+    return TextField(  
       onChanged: onChanged,
-        validator: (value) {
-        if (value == null || value.isEmpty) {
-          return "Please enter your $hintText";
-        }
-        if (hintText.toLowerCase().contains("email") &&
-      !RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-     return 'Enter a valid email';
-  }
-
-       
-
-        return null; // لازم ترجع null لو مفيش خطأ
-      },
-      
+      keyboardType: TextInputType.number,
         decoration: InputDecoration(
           hintText: hintText,
           labelStyle: const TextStyle(
