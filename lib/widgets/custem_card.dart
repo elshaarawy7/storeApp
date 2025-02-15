@@ -11,7 +11,7 @@ class CustemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
        onTap: () {
-         Navigator.pushNamed(context, UppdateProdactPage.id);
+         Navigator.pushNamed(context, UppdateProdactPage.id , arguments: prodact);
        },
       child: Center(
           child:Stack(
