@@ -1,32 +1,32 @@
 class ProdactModal {
   final int id;
   final String title;
-  final double price;
-  final String descraption;
+  final double price; // هنا المشكلة
+  final String description;
+  final String category;
   final String image;
-  final RatingModal rating  ;
 
-  ProdactModal( 
-      {
-      required this.id,
-      required this.title,
-      required this.price,
-      required this.descraption,
-      required this.image , 
-      required this.rating,
-      }); 
+  ProdactModal({
+    required this.id,
+    required this.title,
+    required this.price,
+    required this.description,
+    required this.category,
+    required this.image,
+  });
 
-      factory ProdactModal.fromJason(jasonData){
-        return ProdactModal(
-          id: jasonData['id'], 
-          title: jasonData['title'], 
-          price:jasonData['price'], 
-          descraption: jasonData[ "description"], 
-          image: jasonData['image'] ,
-          rating: RatingModal.fromJason(jasonData['rating'])
-          );
-      }
-} 
+  factory ProdactModal.fromJson(Map<String, dynamic> json) {
+    return ProdactModal(
+      id: json['id'],
+      title: json['title'],
+      price: (json['price'] as num).toDouble(), // الحل هنا
+      description: json['description'],
+      category: json['category'],
+      image: json['image'],
+    );
+  }
+}
+
 
 class RatingModal{
   final double rete ;

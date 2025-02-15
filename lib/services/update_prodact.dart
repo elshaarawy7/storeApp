@@ -21,6 +21,6 @@ class UpdateProdact {
         'category': category
       }
     ); 
-    return ProdactModal.fromJason(data);
+    return ProdactModal.fromJson(data);
   }
 }

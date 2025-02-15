@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
 import 'package:stroe_app/helper/api.dart';
 import 'package:stroe_app/model/prodact_modal.dart';
 
@@ -13,7 +10,7 @@ class Categriesservices {
    
   for (int i  = 0 ; i<data.length ; i++){
    ProdactList.add(
-     ProdactModal.fromJason(data[i]),
+     ProdactModal.fromJson(data[i]),
    );
   }
   return ProdactList ;
