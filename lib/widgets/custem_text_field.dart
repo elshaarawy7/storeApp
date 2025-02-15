@@ -5,6 +5,7 @@ class Custem_Text_field extends StatelessWidget {
 
   final hintText ; 
   Function(String)?onChanged;
+  TextInputType?inputType;
   
 
   @override
@@ -14,7 +15,7 @@ class Custem_Text_field extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(  
       onChanged: onChanged,
-      keyboardType: TextInputType.number,
+      keyboardType: inputType,
         decoration: InputDecoration(
           hintText: hintText,
           labelStyle: const TextStyle(
