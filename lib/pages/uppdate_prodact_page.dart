@@ -9,6 +9,16 @@ class UppdateProdactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor:Colors.transparent,
+        title: Text("Update Prodact" ,  style: TextStyle(
+          color:Colors.black , 
+          fontSize: 20 ,
+          fontWeight: FontWeight.bold , 
+        ),), 
+        centerTitle: true,
+        elevation: 0,
+      ),
     );
   }
 }
