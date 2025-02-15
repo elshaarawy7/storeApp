@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stroe_app/widgets/custem_text_field.dart';
 
 class UppdateProdactPage extends StatelessWidget {
   const UppdateProdactPage({super.key});
@@ -18,6 +19,36 @@ class UppdateProdactPage extends StatelessWidget {
         ),), 
         centerTitle: true,
         elevation: 0,
+      ), 
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Custem_Text_field(
+              hintText: "Prodact Name",
+            ) , 
+
+          const  SizedBox(height: 10,),
+
+            Custem_Text_field(
+              hintText: "descraption",
+            ) ,
+
+            const  SizedBox(height: 10,),
+
+            Custem_Text_field(
+              hintText: "price",
+            ) , 
+
+            const  SizedBox(height: 10,),
+
+            Custem_Text_field(
+              hintText: "image",
+            ) ,
+
+           
+          ],
+        ),
       ),
     );
   }
