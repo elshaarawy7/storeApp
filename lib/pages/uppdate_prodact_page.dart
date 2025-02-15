@@ -89,14 +89,7 @@ class _UppdateProdactPageState extends State<UppdateProdactPage> {
                   setState(() {
                     
                   });
-                  UpdateProdactServces().uppdateProdct(
-                    title: prodactName!, 
-                    price: price!, 
-                    desc: descraption!, 
-                    image: image!, 
-                    category:product.category,
-                     ); 
-                     isLoding = false ;
+                  upDateProdact(product);
                      setState(() {
                        
                      });
@@ -110,5 +103,16 @@ class _UppdateProdactPageState extends State<UppdateProdactPage> {
         ),
       ),
     );
+  }
+
+  void upDateProdact(ProdactModal product) {
+    UpdateProdactServces().uppdateProdct(
+      title: prodactName!, 
+      price: price!, 
+      desc: descraption!, 
+      image: image!, 
+      category:product.category,
+       ); 
+       isLoding = false ;
   }
 }
