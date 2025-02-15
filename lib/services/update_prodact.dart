@@ -2,7 +2,9 @@ import 'package:stroe_app/helper/api.dart';
 
 import '../model/prodact_modal.dart';
 
-class UpdateProdact { 
+class UpdateProdact {
+  static var id;
+ 
 
   Future<ProdactModal> uppdateProdct({
     required String title,

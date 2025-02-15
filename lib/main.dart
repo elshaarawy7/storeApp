@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stroe_app/pages/home_page.dart';
+import 'package:stroe_app/pages/uppdate_prodact.dart';
 
 void main() {
   runApp(const StoreApp());
@@ -14,7 +15,8 @@ class StoreApp extends StatelessWidget {
     return MaterialApp( 
       debugShowCheckedModeBanner: false,
       routes: {
-        HomePage.id :(context)=> HomePage()
+        HomePage.id :(context)=> HomePage(),
+        UppdateProdactPage.id:(context)=>UppdateProdactPage()
       }, 
       initialRoute: HomePage.id,
     );
