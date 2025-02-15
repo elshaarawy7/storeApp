@@ -11,7 +11,7 @@ class UppdateProdactPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor:Colors.transparent,
-        title: Text("Update Prodact" ,  style: TextStyle(
+        title: const Text("Update Prodact" ,  style: TextStyle(
           color:Colors.black , 
           fontSize: 20 ,
           fontWeight: FontWeight.bold , 
