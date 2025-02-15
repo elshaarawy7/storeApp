@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stroe_app/model/prodact_modal.dart';
+import 'package:stroe_app/pages/uppdate_prodact_page.dart';
 
 class CustemCard extends StatelessWidget {
    CustemCard({super.key, required this.prodact});
@@ -10,7 +11,7 @@ class CustemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
        onTap: () {
-         
+         Navigator.pushNamed(context, UppdateProdactPage.id);
        },
       child: Center(
           child:Stack(

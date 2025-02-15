@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stroe_app/pages/home_page.dart';
-import 'package:stroe_app/pages/uppdate_prodact.dart';
+import 'package:stroe_app/pages/uppdate_prodact_page.dart';
 
 void main() {
   runApp(const StoreApp());
